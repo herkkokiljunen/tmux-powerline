@@ -18,12 +18,13 @@ mute_status_check "right"
 # Segment
 # Comment/uncomment the register function call to enable or disable a segment.
 
+
 declare -A pwd
 pwd+=(["script"]="${segments_path}/pwd.sh")
 pwd+=(["foreground"]="colour211")
 pwd+=(["background"]="colour89")
 pwd+=(["separator"]="${separator_left_bold}")
-#register_segment "pwd"
+register_segment "pwd"
 
 declare -A mail_count
 mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
@@ -32,7 +33,7 @@ mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
 mail_count+=(["foreground"]="white")
 mail_count+=(["background"]="red")
 mail_count+=(["separator"]="${separator_left_bold}")
-register_segment "mail_count"
+#register_segment "mail_count"
 
 declare -A now_playing
 if [ "$PLATFORM" == "linux" ]; then

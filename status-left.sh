@@ -30,7 +30,7 @@ hostname+=(["script"]="${segments_path}/hostname.sh")
 hostname+=(["foreground"]="colour0")
 hostname+=(["background"]="colour33")
 hostname+=(["separator"]="${separator_right_bold}")
-register_segment "hostname"
+#register_segment "hostname"
 
 declare -A lan_ip
 lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
@@ -81,6 +81,14 @@ vcs_others+=(["foreground"]="black")
 vcs_others+=(["background"]="colour245")
 vcs_others+=(["separator"]="${separator_right_bold}")
 register_segment "vcs_others"
+
+
+declare -A rvm_current
+rvm_current+=(["script"]="${segments_path}/rvm_current.sh")
+rvm_current+=(["foreground"]="black")
+rvm_current+=(["background"]="red")
+rvm_current+=(["separator"]="${separator_right_bold}")
+register_segment "rvm_current"
 
 # Print the status line in the order of registration above.
 print_status_line_left
